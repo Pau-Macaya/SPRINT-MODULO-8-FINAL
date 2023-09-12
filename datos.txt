@@ -1,0 +1,21 @@
+creacion de tabla 
+
+CREATE TABLE skaters(
+    id SERIAL NOT NULL,
+    email character varying(50) NOT NULL,
+    nombre character varying(25) NOT NULL,
+    password character varying(25) NOT NULL,
+    anos_experiencia integer NOT NULL,
+    especialidad character varying(50) NOT NULL,
+    rol character varying(10) NOT NULL DEFAULT 'skater'::character varying,
+    foto character varying(255) NOT NULL DEFAULT 'default.jpg'::character varying,
+    estado boolean NOT NULL DEFAULT false,
+    admin boolean NOT NULL DEFAULT false
+);
+
+integrantes 
+bastian poloni
+andrea pilkiman
+paula makaya
+nibaldo quezada 
+benjamin mora

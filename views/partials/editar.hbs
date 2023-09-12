@@ -1,0 +1,11 @@
+<div id="edit" class="container my-3">
+{{#if admin}}
+{{!-- si admin e true muestra boton admin --}}
+    <button type="button" id="adminedit" class="btn btn-primary btn-sm" ><a href="/admin/?token={{token}}">Administrar Datos</a></button>
+  {{else}}
+  {{!-- por defecto muestra el boton de skater --}}
+    <button type="button" id="adminedit" class="btn btn-primary btn-sm" ><a href="/Datos/?token={{token}}">editar Datos</a></button>
+  {{/if}}
+
+    
+</div>

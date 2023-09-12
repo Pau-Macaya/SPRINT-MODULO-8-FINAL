@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skate Park</title>
+    {{!-- cdn de bootstrap --}}
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    {{!-- cdn de Sweetalert --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {{!-- ruta estilos.css --}}
+    <link rel="stylesheet" href="/css/estilos.css" />
+  </head>
+  <body>
+    <h1>Skate Park</h1>
+    <input type="text" value={{rol}}>
+    <input type="text" value={{admin}}>
+
+    <div class="py-4">
+      <h2>Lista de participantes</h2>
+
+      <hr />
+      {{!-- si existe token muestra los botones de lo contrario no muestra el partial ( se puede mejorar) --}}
+      {{#if token}}
+      {{>editar}}
+      {{else}}
+      {{/if}}
+      {{>tabla}}
+      
+      <a href="/login">Iniciar Sesión</a> |
+      <a href="/registro">Registrarme</a>
+    </div>
+  </body>
+</html>

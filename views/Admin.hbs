@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/estilos.css" />
+  </head>
+  <body>
+    <h1>Skate Park</h1>
+
+    <div class="py-4">
+      <h2>Administración</h2>
+      <hr class="w-50" />
+
+      <table class="table w-50 m-auto">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Años de experiencia</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+  <form action="/admin" method="post">
+            {{#each skaters}}
+          <tr>
+            <th scope="row">1</th>
+            <td><div style="background-image: url('/img/{{foto}}');"></div></td>
+            <td>{{nombre}}</td>
+            <input type="text" value="{{nombre}}" hidden name="nombre">
+            <input type="text" value="{{email}}" hidden name="email">
+            <td>{{anos_experiencia}}</td>
+            <td>{{especialidad}}</td>
+              {{!-- condicional si es true o false el estado --}}
+              {{#if estado}}
+               <td><input name="estado" type="checkbox" checked /></td>
+              {{else}}
+                <td><input name="estado" type="checkbox" /></td>
+              {{/if}}
+           
+          </tr>
+            {{/each}}
+        </tbody>
+      </table>
+<input type="submit" value="actualizar">
+  </form> 
+    </div>
+    <script>
+      
+    </script>
+  </body>
+</html>

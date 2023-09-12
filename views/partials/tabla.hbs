@@ -1,0 +1,30 @@
+<table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Años de experiencia</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+            {{#each skaters}}
+          <tr>
+            <th scope="row">1</th>
+            <td><div style="background-image: url('/img/{{foto}}');"></div></td>
+            <td>{{nombre}}</td>
+            <td>{{anos_experiencia}}</td>
+            <td>{{especialidad}}</td>
+              {{!-- condicional si es true o false el estado --}}
+              {{#if estado}}
+                <td class="text-success font-weight-bold">Aprobado</td>
+              {{else}}
+                <td class="text-warning font-weight-bold">En revisión</td>
+              {{/if}}
+           
+          </tr>
+            {{/each}}
+        </tbody>
+      </table>
